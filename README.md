@@ -1,2 +1,5 @@
-# shard_fusion
-A dynamic platform symbolizing collaboration, innovation, and growth. Experience the strength of unity in a world where diverse elements converge for boundless opportunities.
+# Portfolio_Hub
+“Portfolio-hub” is a dynamic showcase platform crafted with Django, HTML, CSS and JavaScript
+and MySQL database. Tailored for students for seamless presentation of portfolio presentation,
+providing a captivating space to exhibit and celebrate their diverse talents and
+accomplishments
