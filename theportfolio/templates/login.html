@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="studentform">
+
+    <form method = "post">
+      {% csrf_token %}
+
+        <input type="email" id="email" placeholder="email" required>
+        <input type="text" id="password" placeholder="enter password " required>
+        <button type="submit"> Submit </button>
+        <a href="{% url "register" %}"> sign up  </a>
+        
+      
+</form>
+
+{% endblock  %}
+
+

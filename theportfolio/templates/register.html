@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="studentform">
+
+    <form method="post">
+      {% csrf_token %}
+        <input type="text" placeholder="your enrollment number  " id="enrlno" required >
+        <input type="text" placeholder="name  " id="name" required >
+        <input type="text" placeholder="roll no" id="roll no" required >
+        <input type="text" placeholder="your enrollment number  " id="enrlno" required >
+        <input type="email" id="email" placeholder="email" required>
+        <input type="text" placeholder=" password " id="password1" required >
+        
+        <button type="submit"> sign up  </button>
+        <a href="{% url "loginpage" %}">sign in </a>
+      
+</form>
+
+{% endblock  %}
+
+
