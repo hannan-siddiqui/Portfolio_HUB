@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>the_portfolio</title>
-    <link rel="stylesheet" href="/static/style.css">
+    {% comment %} <link rel="stylesheet" href="/static/style.css"> {% endcomment %}
     <style>
         
         * {
@@ -26,6 +26,7 @@
             background-color: rgb(255, 255, 255);
         }
         header {
+            
             padding: 20px 10px 20px 10px;
             font-weight: bold;
             font-size: 1.5rem;
@@ -326,7 +327,7 @@
            
             {% if user.is_authenticated  %}
                 <a href="{% url "studentform" %}">studentform</a>
-                <a href="{% url "profile" %}">user</a>
+                <a href="{% url "profile" %}">{{user.username}}</a>
                 <a href="{% url "logoutpage" %}">logout</a>
 
                 {% else %}

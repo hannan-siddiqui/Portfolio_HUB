@@ -1,15 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block content %} 
 <div class="studentform">
 
     <form method="post">
       {% csrf_token %}
-        <input type="text" placeholder="course" id="course" required>
-        <input type="text" placeholder="enrl  no " id="enrlno" required >
-        <input type="file" id="image" accept="image/png, image/jpeg" required>
+      
         <input type="text" id="name" placeholder="name" required>
+        <input type="text" placeholder="roll no" id="rollno" required>
+        <input type="text" placeholder="enrl  no " id="enrlno" required >
+        <input type="text" placeholder="course" id="course" required>
         <input type="text" id="phone" placeholder="phone" required>
         <input type="email" id="email" placeholder="email" required>
         <input type="text" id="linkedin" placeholder="linkedin" required>
         <input type="text" id="skills" placeholder="add skill" required>
+        <input type="file" id="image" accept="image/png, image/jpeg" required>
+        
         <button type="submit"> Submit </button>
+
+        <style>
+
+          form{
+            padding-left :40vw;
+            padding-top : 10vh; 
+          }
+          input{
+            font-size:130%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+          }
+
+          button{
+            margin:10px;
+            padding: 10px;
+          }
+        </style>
       
 </form>
+
+
+{% endblock  %}

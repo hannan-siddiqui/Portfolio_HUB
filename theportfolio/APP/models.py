@@ -6,7 +6,7 @@ from django.db import models
 class student(models.Model):
 
     name = models.TextField(max_length=30)
-    rollno = models.TextField(max_length = 30)
+    rollno = models.TextField(max_length = 30, default='DefaultRollNo')
     enrlno = models.TextField(max_length=20)
     course = models.TextField(max_length=30)
     phone = models.TextField(max_length=15)
@@ -15,7 +15,6 @@ class student(models.Model):
     skills = models.TextField(max_length = 500)
     image = models.ImageField(upload_to="upload/")
     
-
 
 
 class placed_students(models.Model):

@@ -1,7 +1,7 @@
 from audioop import reverse
 from django.contrib.auth import authenticate, login, logout
 from MySQLdb import IntegrityError
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from APP.models import *
 from theportfolio import*
@@ -15,8 +15,9 @@ enrlnolist = ['gl6182', 'gl6100']
 def mca(request):
 
     studentlist = {
-        "list" : student.objects.all(), 
+        "list" : student.objects.all(),
     }
+
     return render(request, 'mca.html', studentlist)
 
 
@@ -26,51 +27,46 @@ def cyber(request):
 
 
 
-def loginpage(request):
-    if request.method == "POST":
-        # Attempt to sign user in
-        email = request.POST.get("email")
-        password = request.POST.get("password")
-        user = authenticate(request, email=email, password=password)
+def register(request):
+    if request.method=='POST':
+        uname=request.POST.get('username')
+        email=request.POST.get('email')
+        pass1=request.POST.get('password1')
+        pass2=request.POST.get('password2')
 
-        # Check if authentication successful
-        if user is not None:
-            login(request, user)
-            return  redirect('mca')
+        if pass1!=pass2:
+            return HttpResponse("Your password and confrom password are not Same!!")
         else:
+
+            try:
+                my_user=User.objects.create_user(uname,email,pass1)
+                my_user.save()
+                return redirect('loginpage')
+            except: IntegrityError
+            return redirect('register')
+
             return redirect('loginpage')
-    else:
-        return render(request, "login.html")
+        
+
+    return render (request,'register.html')
+
+
+def loginpage(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        pass1=request.POST.get('pass')
+        user=authenticate(request,username=username,password=pass1)
+        if user is not None:
+            login(request,user)
+            return redirect('mca')
+        else:
+            return HttpResponse ("Username or Password is incorrect!!!")
+
+    return render (request,'login.html')
 
 def logoutpage(request):
     logout(request)
     return redirect('mca')
-
-def register(request):
-    if request.method == "post":
-        enrlno = request.POST.get('your enrollment no. ')
-        email = request.POST.get("email")
-        pass1 = request.POST.get("password1")
-        pass2 = request.POST.get("password2")
-
-        # if enrlno not in enrlnolist:
-        #     return redirect('mca')
-
-
-        try:
-            user = User.objects.create_user(enrlno, email, pass1)
-            user.save()
-        except IntegrityError:
-            return redirect('register')
-        login(request, user)
-        return HttpResponseRedirect(reverse("mca"))
-    else:
-        return render(request, "register.html")
-
-
-
-
-
 
 
 def studentform(request):
