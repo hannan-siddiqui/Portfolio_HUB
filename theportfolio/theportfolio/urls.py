@@ -11,7 +11,6 @@ urlpatterns = [
     path('login/', views.loginpage, name = 'loginpage'),
     path('register/', views.register, name = 'register'),
     path("", views.mca, name = 'mca'),
-    # path('mca/', views.mca, name = 'mca'),
     path("csdf/", views.cyber, name = 'cyber'),
     path('studentform/', views.studentform, name='studentform'),
     

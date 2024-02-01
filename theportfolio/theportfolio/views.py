@@ -73,8 +73,9 @@ def studentform(request):
      if request.method=='post':
          student = student()
          student.course = request.post['course']
+         student.rollno = request.post['rollno']
          student.enrlno = request.post['enrlno']
-         student.image = request.post['iamge']
+         student.image = request.post['image']
          student.name = request.post['name']
          student.phone = request.post['email']
          student.linkedin = request.post['linkedin']
@@ -86,7 +87,10 @@ def studentform(request):
 
 
 def profile(request):
-    return render(request, 'profile.html')
+    studentlist = {
+        "list" : student.objects.all(),
+    }
+    return render(request, 'profile.html', studentlist)
 
 
 

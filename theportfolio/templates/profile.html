@@ -6,4 +6,58 @@
 
 <h1> your profile  {{user.username}}<h1>
 
+    <div class="container">
+    {% for x in list %}
+        {% if x.email == user.email%}
+        <div class="students-detail">
+            <div class="photo-info">
+                <div class="photo">
+                    <img src="s.jpg" alt="420 not found">
+                </div>
+
+                <div class="info">
+
+                    <div class="name ">
+                        <h4>{{x.name}}</h4>
+                    </div>
+
+                    <div class="phone">
+                        {{x.phone}}
+                    </div>
+
+                    <div class="email">
+                        {{x.email}}
+                    </div>
+
+                    <div class="linkedin">
+                        <a href="#"> {{x.linkedin}}</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <span class="skills" class="heading">
+               <h4>SKILLS</h4>
+            </span>
+            <div class="skills">
+                <span class="skill">python,</span>
+                <span class="skill">java,</span>
+                <span class="skill">c++,</span>
+                <span class="skill">c,</span>
+                <span class="skill">django,</span>
+                <span class="skill">JavaScript,</span>
+                <span class="skill">React.JS</span>
+                <span class="skill">Node.JS</span>
+                <span class="skill">SpringBoot</span>
+            </div>
+            <a class="view" href="#">
+                   view more 
+            </a>
+        </div>
+        {% endif %}
+
+        {% endfor %} 
+
+    </div>
+
 {% endblock  %}
