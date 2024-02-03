@@ -70,17 +70,19 @@ def logoutpage(request):
 
 
 def studentform(request):
-     if request.method=='post':
-         student = student()
-         student.course = request.post['course']
-         student.rollno = request.post['rollno']
-         student.enrlno = request.post['enrlno']
-         student.image = request.post['image']
-         student.name = request.post['name']
-         student.phone = request.post['email']
-         student.linkedin = request.post['linkedin']
-         student.skills = request.post['skills']
-         student.save()
+     if request.method=='POST':
+         st = student()
+         st.name = request.POST.get('name')
+         st.course = request.POST.get('course')
+         st.rollno = request.POST.get('rollno')
+         st.enrlno = request.POST.get('enrlno')
+         st.image = request.POST.get('image')
+         st.email = request.POST.get('email')
+         st.phone = request.POST.get('phone')
+         st.linkedin = request.POST.get('linkedin')
+         st.skills = request.POST.get('skills')
+
+         st.save()
          return redirect('mca')
      return render(request, 'studentform.html')
 

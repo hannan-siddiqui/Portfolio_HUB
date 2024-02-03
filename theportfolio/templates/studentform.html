@@ -7,15 +7,15 @@
     <form method="post">
       {% csrf_token %}
       
-        <input type="text" id="name" placeholder="name" required>
-        <input type="text" placeholder="roll no" id="rollno" required>
-        <input type="text" placeholder="enroll  no " id="enrlno" required >
-        <input type="text" placeholder="course" id="course" required>
-        <input type="text" id="phone" placeholder="phone" required>
-        <input type="email" id="email" placeholder="email" required>
-        <input type="text" id="linkedin" placeholder="linkedin" required>
-        <input type="text" id="skills" placeholder="add skills" required>
-        <input type="file" id="image" accept="image/png, image/jpeg" required>
+        <input type="text" id="name" placeholder="name" name='name' required>
+        <input type="text" placeholder="roll no" id="rollno" name = 'rollno' required>
+        <input type="text" placeholder="enroll  no " id="enrlno" name='enrlno' required >
+        <input type="text" placeholder="course" id="course" name='course' required>
+        <input type="text" id="phone" placeholder="phone" name='phone' required>
+        <input type="email" id="email" placeholder="email" name='email' required>
+        <input type="text" id="linkedin" placeholder="linkedin" name='linkedin' required>
+        <input type="text" id="skills" placeholder="add skills" name='skills' required>
+        <input type="file" id="image" accept="image/png, image/jpeg"  name='image' required>
         
         <button type="submit"> Submit </button>
 

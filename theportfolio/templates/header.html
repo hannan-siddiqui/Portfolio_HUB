@@ -83,7 +83,7 @@
         .students-detail {
             
             margin: 20px;
-            width: 25vw;
+            width: 430px;
             border: 1px solid rgba(0,0,0,0.6);
             transition: ease-out 2s;
             
@@ -93,18 +93,11 @@
             overflow: hidden;
         }
         
-        /* .student-details .photo-info, .skills{
-            margin: 0 20px 0 20px;
-        }  */
-        
         .photo-info{
             /* border: transparent; */
-          
+            width: 100%;
             display: flex;
             align-items: center;
-            width: 24vw;
-
-            /* backgroung */
             
          
         }
@@ -112,8 +105,8 @@
         .photo{
             margin-top: 5%;
             margin-left: 2%;
-            width: 170px;
-            height: 100px;
+            width: 130px;
+            height:130px;
             overflow: hidden;            
             margin-right: 2%;
             border: 1px solid rgb(138, 138, 138);
@@ -121,9 +114,7 @@
             border-color: rgb(129, 0, 0);
         }
         .info{
-            margin-right: 3%;
-            /* backgroung */
-            width: 90%;
+            width: 100%;
             
         }
         .info div {
@@ -135,7 +126,8 @@
             width: 100%;
             height: 100%
         }
-        
+
+       
         .name, .phone, .email, .linkedin{
             width: 100%;
             border-bottom: 1px solid rgba(141, 141, 141,0.2);
@@ -159,7 +151,6 @@
             padding-bottom: 10px;
             overflow-y: hidden;
             border-bottom: 1px solid rgba(141, 141, 141,0.2);
-            /* backgroung */
             
         }
 
@@ -234,6 +225,7 @@
         .linkedin, .email{
             font-size: 12px;
         }
+
         /* for mobile */
     @media only screen and (max-width: 599px) {
         
@@ -241,10 +233,19 @@
             font-size: 10px;
         }
         .students-detail{
-            width: 60%;
+            width: 100%;
             border-color: rgb(129, 0, 0);
+    
+
+        .photo-info{
+            width:100%;
         }
-        
+
+        .photo{
+            width: 120px;
+            height:120px;
+        }
+
         .name{
             font-size: 15px;
             width: max-content;
@@ -259,11 +260,12 @@
             color: gray;
         }
         .info{
-            padding-left: 10%;
+            padding-left: 5%;
             width: 20%;
             
         }
         .skills{
+            padding-right: 10px;
             margin-top: 0%;
             padding-top: 0%;
             font-size: 12px;
@@ -294,13 +296,22 @@
         .students-detail{
             width: 35%;
         }
+        .photo-info{
+            width:100%;
+        }
+        .photo{
+            width:220px;
+            height:220px;
+        }
         .info{
             width: 40%;
+            padding: 0;
+            margin: 0;
         }
         .name{
             font-size: 13px;
-            width: max-content;
         }
+        
         .phone,.email,.linkedin,.linkedin a{
             font-size: 10.7px;
             margin-top: 5%;
