@@ -7,53 +7,53 @@
 <h1> your profile  {{user.username}}<h1>
 
     <div class="container">
-    {% for x in list %}
-        {% if x.email == user.email%}
+        {% for student in list %}
+        {% if student.email == user.email %}
+        
         <div class="students-detail">
             <div class="photo-info">
                 <div class="photo">
-                    <img src="s.jpg" alt="420 not found">
+                    <img src="/media/{{ student.image }}" alt="420 not found">
                 </div>
 
                 <div class="info">
 
                     <div class="name ">
-                        <h4>{{x.name}}</h4>
+                        <h4>{{student.name}}</h4>
                     </div>
 
-                    <div class="phone">
-                        {{x.phone}}
+                    <div class="enrlno">
+                        {{student.enrlno}}
                     </div>
 
                     <div class="email">
-                        {{x.email}}
+                        {{student.email}}
                     </div>
 
                     <div class="linkedin">
-                        <a href="#"> {{x.linkedin}}</a>
+                        <a href="#"> {{student.linkedin}}</a>
                     </div>
 
                 </div>
             </div>
 
-            <span class="skills" class="heading">
+            <span class="skillheading" class="heading">
                <h4>SKILLS</h4>
             </span>
+            
             <div class="skills">
-                <span class="skill">python,</span>
-                <span class="skill">java,</span>
-                <span class="skill">c++,</span>
-                <span class="skill">c,</span>
-                <span class="skill">django,</span>
-                <span class="skill">JavaScript,</span>
-                <span class="skill">React.JS</span>
-                <span class="skill">Node.JS</span>
-                <span class="skill">SpringBoot</span>
+
+                {% for skill in student.skills %}
+                <span class="skill">{{skill}}</span>
+                {% endfor %}
+            
+
             </div>
             <a class="view" href="#">
                    view more 
             </a>
         </div>
+        
         {% endif %}
 
         {% endfor %} 

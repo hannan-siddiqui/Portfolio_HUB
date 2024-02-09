@@ -14,18 +14,32 @@ enrlnolist = ['gl6182', 'gl6100']
 
 def mca(request):
 
-    studentlist = {
-        "list" : student.objects.all(),
-    }
+    student_list = student.objects.filter(course='MCA')
 
-    return render(request, 'mca.html', studentlist)
+    for student_obj in student_list:
+        student_obj.skills = student_obj.skills.split(' ')
+
+    return render(request, 'mca.html', {'list': student_list})
 
 
 
 def cyber(request):
-    return render(request, 'cyber.html')
+    student_list = student.objects.filter(course='Cyber_Security')
 
 
+    for student_obj in student_list:
+        student_obj.skills = student_obj.skills.split(' ')
+
+    return render(request, 'cyber.html', {'list': student_list})
+
+def profile(request):
+    
+    student_list = student.objects.all()
+
+    for student_obj in student_list:
+        student_obj.skills = student_obj.skills.split(' ')
+
+    return render(request, 'profile.html', {'list': student_list})
 
 def register(request):
     if request.method=='POST':
@@ -44,9 +58,6 @@ def register(request):
                 return redirect('loginpage')
             except: IntegrityError
             return redirect('register')
-
-            return redirect('loginpage')
-        
 
     return render (request,'register.html')
 
@@ -85,14 +96,6 @@ def studentform(request):
          st.save()
          return redirect('mca')
      return render(request, 'studentform.html')
-
-
-
-def profile(request):
-    studentlist = {
-        "list" : student.objects.all(),
-    }
-    return render(request, 'profile.html', studentlist)
 
 
 

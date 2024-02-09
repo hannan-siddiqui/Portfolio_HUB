@@ -4,7 +4,7 @@ from django.db import models
 class student(models.Model):
 
     name = models.TextField(max_length=30, null=True)
-    rollno = models.TextField(max_length = 30, default='22CAMSA420')
+    rollno = models.TextField(max_length = 30)
     enrlno = models.TextField(max_length=20,null=True)
     course = models.TextField(max_length=30, default='MCA', null=True)
     phone = models.TextField(max_length=15, null=True) 
