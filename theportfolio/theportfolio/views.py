@@ -12,6 +12,11 @@ from django.contrib.auth.models import User
 enrlnolist = ['gl6182', 'gl6100']
 
 
+def index(request):
+    return render(request, 'index.html')
+
+
+
 def mca(request):
 
     student_list = student.objects.filter(course='MCA')
@@ -40,6 +45,17 @@ def profile(request):
         student_obj.skills = student_obj.skills.split(' ')
 
     return render(request, 'profile.html', {'list': student_list})
+
+
+# def viewmore(request, enrlno):
+#     student_list = student.objects.all()
+
+#     for student_obj in student_list:
+#         student_obj.skills = student_obj.skills.split(' ')
+
+#     return render(request, 'profile.html', {'list': student_list})
+
+
 
 def register(request):
     if request.method=='POST':
