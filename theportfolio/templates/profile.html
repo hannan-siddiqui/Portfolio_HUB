@@ -4,16 +4,19 @@
 
 {% block content %}
 
-<h1> your profile  {{user.username}}<h1>
+<h1> your profile  {{user.email}} <h1>
+   
+
 
     <div class="container">
         {% for student in list %}
+
         {% if student.email == user.email %}
         
         <div class="students-detail">
             <div class="photo-info">
                 <div class="photo">
-                    <img src="/media/{{ student.image }}" alt="420 not found">
+                    <img src="#" alt="420 not found">
                 </div>
 
                 <div class="info">
@@ -31,7 +34,7 @@
                     </div>
 
                     <div class="linkedin">
-                        <a href="#"> {{student.linkedin}}</a>
+                        <a href="{{student.linkedin}}"> linkedin</a>
                     </div>
 
                 </div>
@@ -40,7 +43,7 @@
             <span class="skillheading" class="heading">
                <h4>SKILLS</h4>
             </span>
-            
+
             <div class="skills">
 
                 {% for skill in student.skills %}
@@ -49,14 +52,15 @@
             
 
             </div>
-            <a class="view" href="#">
+            <a class="view" href="{% url "viewmore" student.id %}">
                    view more 
             </a>
         </div>
-        
+
         {% endif %}
 
         {% endfor %} 
+
 
     </div>
 

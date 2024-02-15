@@ -2,7 +2,7 @@ from audioop import reverse
 from django.contrib.auth import authenticate, login, logout
 from MySQLdb import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from APP.models import *
 from theportfolio import*
 
@@ -30,8 +30,6 @@ def mca(request):
 
 def cyber(request):
     student_list = student.objects.filter(course='Cyber_Security')
-
-
     for student_obj in student_list:
         student_obj.skills = student_obj.skills.split(' ')
 
@@ -47,14 +45,10 @@ def profile(request):
     return render(request, 'profile.html', {'list': student_list})
 
 
-# def viewmore(request, enrlno):
-#     student_list = student.objects.all()
+def viewmore(request, stid):
+    studentdetail =  get_object_or_404(student, id=stid)
 
-#     for student_obj in student_list:
-#         student_obj.skills = student_obj.skills.split(' ')
-
-#     return render(request, 'profile.html', {'list': student_list})
-
+    return render(request, 'viewmore.html', {'student': studentdetail})
 
 
 def register(request):
@@ -73,7 +67,9 @@ def register(request):
                 my_user.save()
                 return redirect('loginpage')
             except: IntegrityError
-            return redirect('register')
+            return render( request, 'register.html', {
+                "message": "Username already taken or you are not amu student"
+            })
 
     return render (request,'register.html')
 
@@ -87,7 +83,9 @@ def loginpage(request):
             login(request,user)
             return redirect('mca')
         else:
-            return HttpResponse ("Username or Password is incorrect!!!")
+            return render(request, "login.html", {
+                "message": "Invalid username or password."
+            })
 
     return render (request,'login.html')
 
@@ -107,6 +105,9 @@ def studentform(request):
          st.email = request.POST.get('email')
          st.phone = request.POST.get('phone')
          st.linkedin = request.POST.get('linkedin')
+         st.github = request.POST.get('github')
+         st.insta = request.POST.get('insta')
+         st.desc = request.POST.get('desc')
          st.skills = request.POST.get('skills')
 
          st.save()

@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: rgb(133, 0, 0);
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+header {
+    
+    padding: 20px 10px 20px 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    position: fix;
+    top:10px; 
+    left: 10%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(129, 0, 0);
+    font-weight:200;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.navbar a{
+    padding-left: 6.5vw;
+    color: rgb(182, 182, 182);
+    transition: ease 0.7s;
+    font-size: medium;
+}
+
+.navbar a:hover{
+    color: red;
+}
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.skillheading{
+    margin-top: 10px;
+    margin-bottom: 7px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.students-detail:hover{
+    box-shadow: none;
+    /* transform: translateX(-13px); */
+    color: black;
+    transition: 0.5s;
+    box-shadow: 0px;
+    border: 0px;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.6);
+    border: 1px solid rgba(0,0,0,0.6);
+    /* transform: translateY(13px); */
+}
+
+.students-detail {
+    margin: 20px;
+    width: 490px;
+    border: 1px solid rgba(0,0,0,0.6);
+    transition: ease-out 2s;
+    
+    /* backgroung */
+    
+    /* border-radius: 4%; */
+    overflow: hidden;
+}
+
+.photo-info{
+    /* border: transparent; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+ 
+}
+
+.photo{
+    margin-top: 5%;
+    margin-left: 2%;
+    width: 150px;
+    height:150px;
+    overflow: hidden;            
+    margin-right: 2%;
+    border: 1px solid rgb(138, 138, 138);
+    border-radius: 50%;
+    border-color: rgb(129, 0, 0);
+}
+
+
+.info div {
+    padding: 3%;
+
+}
+
+.photo img{
+    width: 100%;
+    height: 100%
+}
+
+
+.name, .enrlno , .email, .linkedin{
+    width: 100%;
+    border-bottom: 1px solid rgba(141, 141, 141,0.2);
+}
+
+.name{
+    border-color: rgb(129, 0, 0);
+}
+.enrlno ,.email, .linkedin, .linkedin a{
+    color:rgba(141, 141, 141,1);
+    font-size: small;
+}
+
+.skills{
+  
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 4px;
+    padding-bottom: 10px;
+    overflow-y: hidden;
+    border-bottom: 1px solid rgba(141, 141, 141,0.2);
+    
+}
+
+
+
+
+.skills> h4{
+    margin-top: 13%;
+    font-weight: 600;
+    text-decoration: none;
+
+}
+.skills > .skill{
+    display: flex;
+    justify-content: left;
+    padding-left: 4%;
+    padding-bottom: 2%;
+    color: gray;
+    font-size: small;
+}
+
+.view{  
+    display: flex;
+    margin-top: 10%;
+    margin-bottom: 6%;
+    border: none;
+    background: rgb(129, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 3%;
+    /* margin: 100px; */
+    text-align: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+
+
+.students-detail:hover{
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(129, 0, 0);
+    /* box-shadow: 0px 0px 100px solid rgb(129, 0, 0); */
+    box-shadow: 0px 0px 30px rgb(133, 0, 0);
+    .name{
+        border-color: white;
+    }
+    .view{
+        background-color: white;
+        color: rgb(129, 0, 0);
+    }
+    .photo{
+        border-color: white;
+    }
+    .name, .skills{
+        color: white;
+    }
+    .enrlno , .email, .linkedin, .linkedin a, .skills > .skill{
+    color: rgb(192, 192, 192);
+}
+.enrlno ,.email, .linkedin{
+border-bottom: 1px solid rgb(192, 192, 192, 0.415);
+}
+.skills{
+    border-bottom: 1px solid rgba(216, 216, 216, 0.415);
+}
+}
+
+.skills a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.linkedin, .email{
+    font-size: 12px;
+}
+
+/* for mobile */
+@media only screen and (max-width: 599px) {
+
+.header a{
+    font-size: 10px;
+}
+
+.skillheading{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.students-detail{
+    width: 100%;
+    border-color: rgb(129, 0, 0);
+
+
+.photo-info{
+    width:100%;
+}
+
+.photo{
+    width: 150px;
+    height:150px;
+}
+
+.name{
+    font-size: 15px;
+    width: max-content;
+    border-color: rgb(129, 0, 0);
+}
+.email,.enrlno ,linkedin, .linkedin a{
+    border: none;
+    font-size: 10px;
+    margin-top: 5px;
+    padding-bottom: 2.5px;
+    width: max-content;
+    color: gray;
+}
+.info{
+    padding-left: 5%;
+    width: 20%;
+    
+}
+
+.skillheading{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:5px;
+    
+}
+
+.skills{
+    padding-right: 10px;
+    margin-top: 0%;
+    padding-top: 0%;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(216, 216, 216, 0.415);
+}
+
+.skills > .skill{
+    padding-top: 5px;
+    height: fit-content;
+    font-size:  10px;
+}
+
+.view{
+    display: flex;
+    padding: 2%;
+    margin-bottom: 5%;
+    margin-left: none;
+    margin-right: none;
+    font-size: 12px;
+    border: none;
+    background-color: rgb(129, 0, 0) ;
+    color: white;
+}
+
+}
+
+@media only screen and (min-width: 600px) and (max-width:1023px) {
+.students-detail{
+    width: 35%;
+}
+.photo-info{
+    width:100%;
+}
+.photo{
+    width: 150px;
+    height:150px;
+}
+.skillheading{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.info{
+    width: 40%;
+    padding: 0;
+    margin: 0;
+}
+.name{
+    font-size: 13px;
+}
+
+.enrlno ,email,.linkedin,.linkedin a{
+    font-size: 10.7px;
+    margin-top: 5%;
+}
+.skills > .skill{
+    font-size: 10.5px;
+}
+}
+
+}

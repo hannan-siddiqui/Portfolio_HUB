@@ -1,7 +1,32 @@
 {% extends "base.html" %}
 
+
 {% block content %} 
-<div class="studentform">
+<link href = '/static/studentform.css' rel='stylesheet'>
+<style>
+  
+  .container{
+    margin-top: 20px;
+  }
+
+  @media only screen and (max-width: 599px){
+
+    .studentform{
+      width: 400px;
+    }
+
+    input{
+      width:100%;
+    }
+
+  }
+  
+
+</style>
+
+<div class="container">
+
+<div class="studentform" sr>
 
     <form method="post">
       {% csrf_token %}
@@ -13,32 +38,15 @@
         <input type="text" id="phone" placeholder="phone" name='phone' required>
         <input type="email" id="email" placeholder="email" name='email' required>
         <input type="text" id="linkedin" placeholder="linkedin" name='linkedin' required>
+        <input type="text" id="github" placeholder="github" name='github' required>
+        <input type="text" id="insta" placeholder="instagram " name='insta' >
+        <input type="text"  id="desc" placeholder="about yourself.." name='desc' required>
         <input type="text" id="skills" placeholder="add skills" name='skills' required>
         <input type="file" id="image" accept="image/png, image/jpeg" name='image' required>
         
-        <button type="submit"> Submit </button>
-
-        <style>
-
-          form{
-            padding-left :40vw;
-            padding-top : 10vh; 
-          }
-          input{
-            font-size:130%;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-          }
-
-          button{
-            margin:10px;
-            padding: 10px;
-          }
-        </style>
-      
-</form>
-
-
+        <button class="button" type="submit"> Submit </button>
+      </form>
+</div>
+</div>
+        
 {% endblock  %}

@@ -10,6 +10,9 @@ class student(models.Model):
     phone = models.TextField(max_length=15, null=True) 
     email = models.TextField(max_length=50, null=True)
     linkedin = models.TextField(max_length=100, null=True)
+    github = models.TextField(max_length=100, null=True)
+    insta = models.TextField(max_length=100, null=True)
+    desc = models.TextField(max_length=50, null= True)
     skills = models.TextField(max_length = 500, null=True)
     image = models.ImageField(upload_to="upload/", null=True)
     

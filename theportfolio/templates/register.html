@@ -2,8 +2,9 @@
 
 
 {% block content %}
-<style media="screen">
-  *,
+
+<style>
+*,
 *:before,
 *:after{
 padding: 0;
@@ -127,12 +128,15 @@ margin-right: 4px;
 }
 
 </style>
+
+
 </head>
 <body>
 <div class="background">
     <div class="shape"></div>
     <div class="shape"></div>
 </div>
+
 <form action="" method="post">
     {% csrf_token %} 
     <h3>Signup Here</h3>
