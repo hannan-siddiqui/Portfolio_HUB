@@ -3,9 +3,7 @@
 
 
 {% block content %}
-
-<h1> your profile  {{user.email}} <h1>
-   
+<h1> your profile  {{user.email}} </h1>
 
 
     <div class="container">
@@ -34,7 +32,7 @@
                     </div>
 
                     <div class="linkedin">
-                        <a href="{{student.linkedin}}"> linkedin</a>
+                        <a href="{{student.linkedin}}"> linkedin </a>
                     </div>
 
                 </div>
@@ -52,9 +50,7 @@
             
 
             </div>
-            <a class="view" href="{% url "viewmore" student.id %}">
-                   view more 
-            </a>
+            
         </div>
 
         {% endif %}

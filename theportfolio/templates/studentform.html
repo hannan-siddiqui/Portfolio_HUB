@@ -26,12 +26,13 @@
 
 <div class="container">
 
-<div class="studentform" sr>
+<div class="studentform">
 
     <form method="post">
       {% csrf_token %}
+
       
-        <input type="text" id="name" placeholder="name" name='name' required>
+        <input type="text" id="name" placeholder="name" name='name'  required>
         <input type="text" placeholder="roll no" id="rollno" name = 'rollno' required>
         <input type="text" placeholder="enroll no " id="enrlno" name='enrlno' required >
         <input type="text" placeholder="course" id="course" name='course' required>
@@ -42,7 +43,8 @@
         <input type="text" id="insta" placeholder="instagram " name='insta' >
         <input type="text"  id="desc" placeholder="about yourself.." name='desc' required>
         <input type="text" id="skills" placeholder="add skills" name='skills' required>
-        <input type="file" id="image" accept="image/png, image/jpeg" name='image' required>
+        <input type="file" id="image"  name='image' required> 
+      
         
         <button class="button" type="submit"> Submit </button>
       </form>

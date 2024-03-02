@@ -1,7 +1,11 @@
 from django import views
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path
 from theportfolio import views
+from django.conf.urls.static import static
+from django.conf import settings
+from media import *
 
 
 urlpatterns = [
@@ -14,6 +18,7 @@ urlpatterns = [
     path("mca/", views.mca, name = 'mca'),
     path('student/<int:stid>/', views.viewmore, name='viewmore'),
     path("csdf/", views.cyber, name = 'cyber'),
-    path('studentform/', views.studentform, name='studentform'),
+    path('studentform', views.studentform, name='studentform'),
+
     
-]
+]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

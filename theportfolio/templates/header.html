@@ -22,7 +22,7 @@
             <a href="{% url "cyber" %}">Cyber</a>
            
             {% if user.is_authenticated  %}
-                <a href="{% url "studentform" %}">studentform</a>
+                <a href="{% url "studentform"%}">student-form</a>
                 <a href="{% url "profile" %}">{{user.username}}</a>
                 <a href="{% url "logoutpage" %}">logout</a>
 

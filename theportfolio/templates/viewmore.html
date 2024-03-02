@@ -5,7 +5,7 @@
 
 <style>
 
-    *{
+    /* {% comment %} *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -16,7 +16,8 @@
         font-family: Arial, Helvetica, sans-serif;
         
     }
-    
+     {% endcomment %} */
+
     :root{
         --bg-color:#1f242d;
         --second-bg-color:#323946;
@@ -48,11 +49,15 @@
         justify-content: center;  
         align-items: center;
         gap: 2rem;
-        background-color: rgb(0, 0, 0);
+        /* background-color: rgb(0, 0, 0); */
         margin-top:0;
         
     } 
     
+    .home_content{
+        width: 50vw;
+    }
+
     .home_content h1{
         color: red;
     
@@ -61,30 +66,18 @@
     
     /* Home Image */
     .home_img{
-        width: 100vw;
-        padding-left: 100px;
-        border: red solid 4px;
-    }
-    
-    
-    .home_img img{
-        width: 35vh;
+        width: 35vw;
         border-radius: 20px 40px;
     }
-    
-    
-    
-    @keyframes floatImage{
-        0%{
-            transform: translateY(0);
-        }
-        50%{
-            transform: translateY(-2.9rem);
-        }
-        100%{
-            transform: translateY(0);
-        }
+
+
+    img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: fit;
     }
+
+    
     
     .home_content h3{
         font-weight: 700;
@@ -554,10 +547,15 @@
         .home_content h1{
             font-size: 5rem;
         }
+        .home_content{
+            width: 100%;
+            margin: 20px;
+        }
         .home_img{
-           
-            display: flex;
-            justify-content: center;
+            /* padding-left: 30vw; */
+            width: 100%;
+            margin: 20px;
+            
         }
         
     
@@ -598,9 +596,14 @@
         .portfolio-container{
             grid-template-columns: 1fr;
         }
+        .home_content{
+            width: 100%;
+            margin: 20px;
+        }
         .home_img{
             /* padding-left: 30vw; */
-            margin-right: 20vw;
+            width: 100%;
+            margin: 20px;
             
         }
     }
@@ -625,9 +628,14 @@
         .about_img img{
             width: 90vw;
         }
+        .home_content{
+            width: 100%;
+            margin: 20px;
+        }
         .home_img{
             /* padding-left: 30vw; */
-            margin-right: 20vw;
+            width: 100%;
+            margin: 20px;
             
         }
     
@@ -679,9 +687,11 @@
             margin-top: 2rem;
         }
     }
+}
     
     
 </style>
+
 
     <section class="home" id="home">
         
@@ -705,7 +715,7 @@
         </div>
         
         <div class="home_img">
-            <img src="#" alt="">
+            <img src="{{student.image.url}}" alt="">
         </div>
 
     </section>

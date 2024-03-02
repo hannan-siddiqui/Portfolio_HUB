@@ -1,10 +1,11 @@
-from audioop import reverse
 from django.contrib.auth import authenticate, login, logout
 from MySQLdb import IntegrityError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from APP.models import *
 from theportfolio import*
+from media import *
+
 
 from django.contrib.auth.models import User
 
@@ -47,7 +48,6 @@ def profile(request):
 
 def viewmore(request, stid):
     studentdetail =  get_object_or_404(student, id=stid)
-
     return render(request, 'viewmore.html', {'student': studentdetail})
 
 
@@ -94,14 +94,16 @@ def logoutpage(request):
     return redirect('mca')
 
 
+
 def studentform(request):
-     if request.method=='POST':
+    
+    if request.method == 'POST':
          st = student()
          st.name = request.POST.get('name')
          st.course = request.POST.get('course')
          st.rollno = request.POST.get('rollno')
          st.enrlno = request.POST.get('enrlno')
-         st.image = request.POST.get('image')
+         st.image = request.FILES.get('image')
          st.email = request.POST.get('email')
          st.phone = request.POST.get('phone')
          st.linkedin = request.POST.get('linkedin')
@@ -109,10 +111,10 @@ def studentform(request):
          st.insta = request.POST.get('insta')
          st.desc = request.POST.get('desc')
          st.skills = request.POST.get('skills')
-
+         st.image = request.POST.get('image')
+        
          st.save()
          return redirect('mca')
-     return render(request, 'studentform.html')
-
-
+    
+    return render(request, 'studentform.html')
 

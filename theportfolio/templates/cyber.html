@@ -3,58 +3,58 @@
 {% block content %}
 
     
-    <div class="container">
+<div class="container">
 
-        {% for student in list %}
-        
-        <div class="students-detail">
-            <div class="photo-info">
-                <div class="photo">
-                    <img src="h_siddiqui.jpg" alt="420 not found">
-                </div>
-
-                <div class="info">
-
-                    <div class="name ">
-                        <h4>{{student.name}}</h4>
-                    </div>
-
-                    <div class="enrlno">
-                        {{student.enrlno}}
-                    </div>
-
-                    <div class="email">
-                        {{student.email}}
-                    </div>
-
-                    <div class="linkedin">
-                        <a href="#"> {{student.linkedin}}</a>
-                    </div>
-
-                </div>
+    {% for student in list %}
+    
+    <div class="students-detail">
+        <div class="photo-info">
+            <div class="photo">
+                <img src="{{student.image.url}}" alt="420 not found">
             </div>
 
-            <span class="skillheading" class="heading">
-               <h4>SKILLS</h4>
-            </span>
+            <div class="info">
 
-            <div class="skills">
+                <div class="name ">
+                    <h4>{{student.name}}</h4>
+                </div>
 
-                {% for skill in student.skills %}
-                <span class="skill">{{skill}}</span>
-                {% endfor %}
-            
+                <div class="enrlno">
+                    {{student.enrlno}}
+                </div>
+
+                <div class="email">
+                    {{student.email}}
+                </div>
+
+                <div class="linkedin">
+                    <a href="{{student.linkedin}}"> linkedin</a>
+                </div>
 
             </div>
-            <a class="view" href="{% url "viewmore" student.id %}">
-                   view more 
-            </a>
         </div>
 
-        {% endfor %} 
+        <span class="skillheading" class="heading">
+           <h4>SKILLS</h4>
+        </span>
 
+        <div class="skills">
 
-       
-    </div>
+            {% for skill in student.skills %}
+            <span class="skill">{{skill}}</span>
+            {% endfor %}
         
-    {% endblock %}
+
+        </div>
+        <a class="view" href="{% url "viewmore" student.id %}">
+               view more 
+        </a>
+    </div>
+
+
+    {% endfor %} 
+
+</div>
+
+        
+{% endblock %}

@@ -122,6 +122,12 @@ header {
     height: 100%
 }
 
+img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
 
 .name, .enrlno , .email, .linkedin{
     width: 100%;
